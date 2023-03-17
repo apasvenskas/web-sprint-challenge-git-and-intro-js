@@ -1,3 +1,5 @@
+const { copy } = require("../web-module-challenge-arrays");
+
 const artists = [
   {
     "id": 0,
@@ -214,6 +216,7 @@ console.log('T1', artists[0].name);
 
 //(2) Bio of the third artist (2nd index) in the array 
 console.log('T1', artists[2].bio);
+console.log(artists[2].id)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 (not auto tested): 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -248,12 +251,12 @@ Use listOfNames to do the following:
 */
 
 function listOfNames(array) {
-  [...array];
+  let copyArray= [...array];
   for (let i = 0; i < array.length; i++) {
-  array[i] = array[i].name;
+  copyArray[i] = array[i].name;
 }
   
-  return array; 
+  return copyArray; 
 }
 console.log('T4', listOfNames(artists));
 
@@ -268,15 +271,17 @@ Use removeArtist to do the following:
 5. Return the resulting copied array
 🌟 EXAMPLE: if removeArtist is invoked with the artists array and the number 0, it will return the resulting array with Amedeo Modigliani removed from our dataset. */
 
-function removeArtist(array, id) {
-  for (let i = 0; i < array.length; i++) {
-  if (id === array[i]){
-    array.splice(i, 1);
+function removeArtist(array, number) {
+  let new1Array= [...array];
+  //let index = new1Array.findIndex(number);
+  for (let i = 0; i < new1Array.length; i++) {
+    if (new1Array[i] === new1Array[number].index) {
+      new1Array[i].splice(i, 1);
+    }
   }
+  return new1Array;
 }
-  return array;
-}
-//console.log(removeArtist(artists, 19));
+console.log('T5', removeArtist(artists, 19));
 
 
 
@@ -296,10 +301,19 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(array, name, years, genre, nationality, bio) {
+  let newArray=[...array];
+  let objArtist = { 
+    name: name,    
+    years: years,
+    genre: genre, 
+    nationality: nationality,
+    bio: bio, 
+  }  
+  newArray.push(objArtist)
+  return newArray;
 }
-
+//console.log('T6', addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.' ));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
