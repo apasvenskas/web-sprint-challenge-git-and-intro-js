@@ -379,7 +379,7 @@ function artistByCountry(array, nationality){
   }
   return newArray;
 }
-console.log('T9', artistByCountry(artists, 'Spanish'));S
+console.log('T9', artistByCountry(artists, 'Spanish'));
 
 
 
