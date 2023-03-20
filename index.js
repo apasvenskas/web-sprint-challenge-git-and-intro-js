@@ -1,4 +1,4 @@
-const { copy } = require("../web-module-challenge-arrays");
+
 
 const artists = [
   {
@@ -363,7 +363,7 @@ console.log('T8', artistInfo(artists, 'Frida Kahlo'));
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 9: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use artistByCountry to do the following: 
 1. Receive the artist array as an argument passed from the FIRST parameter
-2. Receive a string (nationality) as an argument passed from the SECOND parameter
+2. Receive a string (nationality) as an argument passed from the SECOND parameterS
 3. Return an array of artist names who are ONLY of that nationality. 
 ⚠ NOTE: Artists who have more than one nationality should not be included in this new array.  
 
@@ -379,7 +379,7 @@ function artistByCountry(array, nationality){
   }
   return newArray;
 }
-console.log('T9', artistByCountry(artists, 'Spanish'));
+console.log('T9', artistByCountry(artists, 'Spanish'));S
 
 
 
